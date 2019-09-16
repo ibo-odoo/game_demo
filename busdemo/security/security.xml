@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="examine_category">
+            <field name="name">Examination</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record model="res.groups" id="group_examine_user">
+            <field name="name">Student</field>
+            <field name="category_id" ref="examine_category"/>
+        </record>
+
+        <record model="res.groups" id="group_examine_manager">
+            <field name="name">Teacher</field>
+            <field name="implied_ids" eval="[(4, ref('busdemo.group_examine_user'))]"/>
+            <field name="category_id" ref="examine_category"/>
+        </record>
+    </data>
+</odoo> 

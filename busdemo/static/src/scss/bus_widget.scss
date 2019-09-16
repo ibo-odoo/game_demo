@@ -1,0 +1,19 @@
+.image-preview {
+        display: block;
+        height: 300px;
+        width: 400px;
+        border-style:solid;
+        border-color:black;
+        .center-image {
+            display:block;
+            margin: auto;
+            .img {
+            margin-left:60px;
+            }
+        }
+    }
+.buttn{
+    height:50px;
+    width:80px;
+    margin-top:20px;
+}

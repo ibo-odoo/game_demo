@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bus_demo,access.bus.demo,model_bus_demo,base.group_user,1,1,1,0
+access_busdemo_student,access.busdemo.student,model_busdemo_student,base.group_user,1,1,1,1
+access_manager,bus.demo.manager,model_bus_demo,busdemo.group_examine_manager,1,1,1,1
+access_user,bus.demo.manager,model_bus_demo,busdemo.group_examine_user,1,1,1,1

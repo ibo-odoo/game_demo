@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.module.category" id="openacademy_category">
+            <field name="name">Openacademy</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record model="res.groups" id="group_openacademy_user">
+            <field name="name">Openacademy User</field>
+            <field name="category_id" ref="openacademy_category"/>
+        </record>
+
+        <record model="res.groups" id="group_openacademy_manager">
+            <field name="name">Openacademy Manager</field>
+            <field name="implied_ids" eval="[(4, ref('openacademy.group_openacademy_user'))]"/>
+            <field name="category_id" ref="openacademy_category"/>
+        </record>
+
+        <!-- Record Rule.. -->
+
+        <record model="ir.rule" id="rule_personal_course">
+            <field name="name">Personal Course</field>
+            <field name="model_id" ref="model_openacademy_course"/>
+            <field name="domain_force">[('responsible_id.id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('openacademy.group_openacademy_user'))]"/>
+        </record>
+
+        <record model="ir.rule" id="rule_personal_session">
+            <field name="name">Personal Session</field>
+            <field name="model_id" ref="model_openacademy_session"/>
+            <field name="domain_force">[('course_id.responsible_id.id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('openacademy.group_openacademy_user'))]"/>
+        </record>
+    </data>
+</odoo>
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record model="ir.actions.act_window" id="bus_list_action">
+            <field name="name">Busdemo</field>
+            <field name="res_model">bus.demo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create demo
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="image_form_view">
+            <field name="name">image.form</field>
+            <field name="model">bus.demo</field>
+            <field name="arch" type="xml">
+                <form string="Image Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="image" widget='image' options='{"preview_image":"image_medium"}'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="image_tree_view">
+            <field name="name">image.tree</field>
+            <field name="model">bus.demo</field>
+            <field name="arch" type="xml">
+                <tree string="Image Tree">
+                    <field name="name"/>
+                    <field name="image" widget="image"/>
+                </tree>
+            </field>
+        </record>
+<!-- for client action -->
+        <record id="ir_actions_client_student" model="ir.actions.client">
+            <field name="name">Bus Template</field>
+            <field name="tag">bsexample</field>
+        </record>
+        <record id="ir_actions_client_teacher" model="ir.actions.client">
+            <field name="name">Bus Template St</field>
+            <field name="tag">bsexamplest</field>
+        </record>
+
+        <menuitem name="Busdemo"
+            id="main_menu"
+            sequence="9"
+            web_icon="busdemo,static/description/icon.jpeg"
+            />
+
+        <menuitem id="bus_menu" name="BusDemo" parent="main_menu"
+                  action="bus_list_action" groups="busdemo.group_examine_manager"/>
+
+        <menuitem id="ir_action" name="Teacher" parent="main_menu"
+                  action="ir_actions_client_student" groups="busdemo.group_examine_manager"/>
+        <menuitem id="ir_action_st" name="Student" parent="main_menu"
+                  action="ir_actions_client_teacher" groups="busdemo.group_examine_user"/>
+
+    </data>
+</odoo>
+       

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+	
+	<t t-name="counter_template">
+		<div class="container">
+			<!--<button class="btn btn-primary add">ADD</button>-->
+			<button class="btn btn-primary add mb-3 mt-5">ADD</button>
+		   <div id="open"/>
+ 		</div>
+	</t>
+	
+	<t t-name="counter_widget">
+		<div class="input_group w-25 mb-3">
+			
+			<div class="input-group-prepend">
+				<button class="btn btn-primary d-none d-md-inline-block decrement" aria-label="Remove one" href="#">
+					
+					<i class="fa fa-minus"></i>
+				</button>
+			</div>
+			
+		    <input type="text" class="form-control quantity text-center" name="counter"/>
+			
+		    <div class="input-group-append">
+		        <button class="btn btn-primary float_left d-md-inline-block increment" aria-label="Add one" href="#">
+				    
+				    <i class="fa fa-plus"></i>
+			    </button>
+		    </div>
+		
+		    <div>
+			    <div class="input-group-append">
+				    <button class="btn btn-danger delete mb-3 mt-3">Delete</button>
+			    </div>
+		    </div>
+		</div>
+	</t>
+	<t t-name="systray_cloud.myicon">
+        <li class="new_icon">
+            <label class="my_icon" style="margin-bottom:0px;" 
+            title="My Icon">
+                <div class="icon_div">
+                    <div class="toggle-icon"><i class="fa fa-cloud"                                  
+                    id="fa-icon"/></div>
+                </div>
+            </label>
+        </li>
+    </t>
+</templates>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="idea_category_list2" model="ir.ui.view">
+            <field name="name">openacademy.course.form.inherit</field>
+            <field name="model">openacademy.course</field>
+            <field name="inherit_id" ref="openacademy.course_form_view"/>
+            <field name="arch" type="xml">
+        <!-- find field description and add the field
+             idea_ids after it -->
+                <xpath expr="//field[@name='description']" position="after">
+                    <field name="idea_ids" string="Number of ideas"/>  
+                </xpath>
+            </field>
+        </record>
+        <menuitem name="Open Academy Inherit"
+            id="main_menu_inh"
+            sequence="9"
+            groups="base.group_user"
+            web_icon="openacademy_inh,static/description/icon.png"
+            />
+    </data>
+</odoo>    

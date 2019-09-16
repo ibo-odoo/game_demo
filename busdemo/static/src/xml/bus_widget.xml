@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="bus_template">
+		<div class="container">
+			<div id="open"/>
+ 		</div>
+	</t>
+
+	<t t-name="busst_template">
+		<div class="container">
+			<div id="close"/>
+ 		</div>
+	</t>
+	
+	<t t-name="busdemo_widget">
+		<div class="input_group w-25 mb-3 mt-5">
+			
+		    <input type="text" class="form-control quantity"/>
+		
+		    <div>
+			    <div class="input-group-append">
+				    <button class="btn btn-danger submit mb-3 mt-3">Submit</button>
+			    </div>
+		    </div>
+		</div>
+	</t>
+
+	<t t-name="busdemost_widget">
+		    <div class="input-group-append joins" t-if="!studentdata">
+				<button class="btn btn-danger join buttn" type="button">Join</button>
+			</div>
+			
+		    <div t-if="studentdata">
+            <section class="image-preview mt-5">
+                <div class="center-image">
+                    <img t-if="img" t-attf-src="data:image/png;base64,#{img.image}" class="img img-responsive mt-5" />
+                </div>
+            </section>
+		    <div class="input_group mb-3 mt-5">
+		        <input type="text" class="form-control quality mb-3 mt-5"/>
+	        <div>
+			    <div class="input-group-append">
+				    <button class="btn btn-danger ok mb-3 mt-1">Ok</button>
+			    </div>
+		    </div>
+		    </div>
+	        </div>
+	</t>
+
+</templates>
